@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 01:23:21 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/07 18:52:46 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/07 20:31:17 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,26 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
+/* 	unsigned int	i0;
+	unsigned int	i1;
+	char	*r;
 
-	i = 0;
-	while (s[i] != '\0')
+	i0 = 0;
+	i1 = 0; */
+	while (*s != '\0')
 	{
-		if (s[i] = c)
-			
+		if (*s == (char)c)
+		{
+			return ((char*)s);
+		}
+		*s++;
 	}
+	return ('\0');
+}
+
+int	main(void)
+{
+	char	s[12] = "Hello World";
+	printf ("%c\n", ft_strchr(s, 'W'));
+	return (0);
 }
