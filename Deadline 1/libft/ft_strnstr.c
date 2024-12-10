@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 01:23:21 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/10 20:01:38 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/10 18:37:47 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/10 20:26:25 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	while (*s != '\0')
+	if (*needle == '\0')
+		return (*haystack);
+	while (*haystack != '\0')
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		while (*haystack == *needle)
+		{
+			return (*haystack);
+			needle++;
+		}
+		haystack++;
 	}
 	return (NULL);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	s[12] = "Hello World";
-	printf ("%s\n", ft_strchr(s, 'W'));
+	char	haystack[12] = "Hello World";
+	char	needle[4] = "Wor";
+	printf ("%s\n", ft_strnstr(haystack, needle, 7));
 	return (0);
-} */
+}

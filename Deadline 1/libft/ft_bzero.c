@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 01:23:21 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/10 20:01:38 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/10 20:08:25 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/10 22:08:01 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_bzero(void *s, size_t n)
 {
-	while (*s != '\0')
+	unsigned int	i;
+	unsigned char	c;
+
+	i = 0;
+	while (((unsigned char)s[i] != '\0') && (i < n))
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		(unsigned char *)s[i] = 0;
+		i++;
 	}
-	return (NULL);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	s[12] = "Hello World";
-	printf ("%s\n", ft_strchr(s, 'W'));
+	char	s[10] = "Hello World";
+	ft_bzero(s, 5);
+	printf ("%s\n", s);
 	return (0);
-} */
+}
