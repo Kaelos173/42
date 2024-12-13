@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 20:08:25 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/11 16:06:49 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/11 19:14:11 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/11 20:55:38 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
-	char			*s1;
+	size_t	i;
+	unsigned char	*str;
+	unsigned char	*strc;
 
 	i = 0;
-	s1 = (char *)s;
-	while ((s1[i] != '\0') && (i < n))
+	str = (unsigned char *)src;
+	while ((str[i] != '\0') && (i < n))
 	{
-		s1[i] = 0;
+		strc[i] = str[i];
 		i++;
 	}
-	s = s1;
+	src = strc;
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	s[12] = "Hello World";
-	ft_bzero(s, 5);
-	printf ("%s\n", s);
-
 	char	s1[12] = "Hello World";
-	bzero(s, 5);
-	printf ("%s\n", s);
+	char	dest1[50];
+	ft_memcpy(0, s1, 5);
+	printf ("%s\n", dest1);
+
+	char	s2[12] = "Hello World";
+	char	dest2[50];
+	ft_memcpy(0, s2, 5);
+	printf ("%s\n", dest2);
 	return (0);
-} */
+}
