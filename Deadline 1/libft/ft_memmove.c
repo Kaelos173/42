@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 19:14:11 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/16 13:32:36 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/16 16:24:40 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/16 17:47:49 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	i = 0;
 	if (src == NULL && dest == NULL)
-		return (NULL);
-	while (i < n)
+		return (0);
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (d >= s)
 	{
-		((char *)dest)[i] = ((const char *)src)[i];
-		i++;
+		while (n--)
+			d[n] = s[n];
 	}
+	else
+		ft_memcpy(d, s, n);
 	return (dest);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	char	s1[] = "Hello World";
-	char	dest1[50];
-	ft_memcpy(dest1, s1, 5);
-	printf ("%s\n", dest1);
+	char src[] = "Hello World";
+	char dest[] = "Hello 1";
 
-	char	s2[] = "Hello World";
-	char	dest2[50];
-	memcpy(dest2, s2, 5);
-	printf ("%s\n", dest2);
-	return (0);
+	ft_memmove(dest, src, 12);
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+
+	return 0;
 } */
