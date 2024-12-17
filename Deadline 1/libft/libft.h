@@ -6,13 +6,14 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 01:15:39 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/16 23:22:46 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:03:02 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include <stdlib.h>
 # include <stdio.h> //delete for submit
 # include <string.h> //delete for submit
 
@@ -37,4 +38,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*strdup(const char *s);
+
 #endif

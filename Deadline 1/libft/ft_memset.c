@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:44:15 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/11 19:13:39 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:24:31 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		i++;
 	}
 	s = s1;
+	return ((char *)s);
 }
 
 /* int	main(void)

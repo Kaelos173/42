@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 22:50:05 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/17 20:44:57 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/17 13:56:06 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/17 16:40:07 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <stddef.h> */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	l;
+	void	*ptr;
 
-	i = 0;
-	l = 0;
-	while (dst[l] != '\0')
-		l++;
-	while ((src[i] != '\0') && (i < dstsize))
-	{
-		dst[l] = src[i];
-		i++;
-		l++;
-	}
-	dst[l] = '\0';
-	return (l);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
-
-/*int	main(void)
-{
-	char	dst[50] = "Hello ";
-	const char	src[] = "World";
-
-	printf("%zu\n", ft_strlcat(dst, src, 2)); 
-	return (0);
-}*/

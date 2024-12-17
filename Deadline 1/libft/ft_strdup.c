@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 22:50:05 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/17 20:44:57 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/17 16:59:34 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/17 19:04:59 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <stddef.h> */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
-	size_t	l;
+	char	*ob;
 
-	i = 0;
-	l = 0;
-	while (dst[l] != '\0')
-		l++;
-	while ((src[i] != '\0') && (i < dstsize))
-	{
-		dst[l] = src[i];
-		i++;
-		l++;
-	}
-	dst[l] = '\0';
-	return (l);
+	if (s == NULL)
+		return (NULL);
+	ob = (char *)malloc(ft_strlen(s) + 1);
+	if (ob == NULL)
+		return (NULL);
+	ft_strlcpy(ob, s, ft_strlen(s) + 1);
+	return (ob);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
-	char	dst[50] = "Hello ";
-	const char	src[] = "World";
+	char	*str = "Hello World";
+	char	*cpy;
 
-	printf("%zu\n", ft_strlcat(dst, src, 2)); 
+	cpy = ft_strdup(str);
+	printf("%s\n", cpy);
+	free(cpy);
 	return (0);
-}*/
+} */
