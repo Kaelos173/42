@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 01:23:21 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/11 16:31:31 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:02:46 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	while (*s)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 

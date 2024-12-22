@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:08:25 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/11 16:06:49 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:44:37 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*s1;
-
-	i = 0;
-	s1 = (char *)s;
-	while ((s1[i] != '\0') && (i < n))
-	{
-		s1[i] = 0;
-		i++;
-	}
-	s = s1;
+	ft_memset(s, 0, n);
 }
 
 /* int	main(void)

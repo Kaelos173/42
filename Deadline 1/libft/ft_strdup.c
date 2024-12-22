@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:59:34 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/17 19:04:59 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 18:08:32 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strdup(const char *s)
 {
 	char	*ob;
 
-	if (s == NULL)
-		return (NULL);
 	ob = (char *)malloc(ft_strlen(s) + 1);
 	if (ob == NULL)
 		return (NULL);

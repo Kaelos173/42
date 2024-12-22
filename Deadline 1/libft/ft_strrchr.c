@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:20:51 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/10 19:31:14 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:06:37 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	while (*s != '\0')
+	int		i;
+	char	cc;
+
+	cc = c;
+	i = strlen(s);
+	if (cc == 0)
+		return ((char *)&s[i]);
+	while (i >= 0)
 	{
-		s++;
+		if (s[i] == cc)
+			return ((char *)&s[i]);
+		i--;
 	}
-	while (*s - 1 != '\0')
-	{
-		if (*s == (char)c)
-		{
-			return ((char *)s);
-		}
-		s--;
-	}
-	return (NULL);
+	return (0);
 }
-/* 
-int	main(void)
+
+/* int	main(void)
 {
 	char	s[12] = "Hello World";
-	printf ("%s\n", ft_strrchr(s, 'C'));
+
+	printf ("%s\n", ft_strrchr(s, 'o'));
 	return (0);
 } */

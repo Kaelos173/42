@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:37:59 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/16 20:02:13 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 17:52:36 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
 
 	ptr1 = (unsigned char *)s1;
 	ptr2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n && ptr1[i] == ptr2[i])
+	while (i < n)
+	{
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
-	if (ptr1[i] != ptr2[i])
-		return (ptr1[i] - ptr2[i]);
+	}
 	return (0);
 }
 
