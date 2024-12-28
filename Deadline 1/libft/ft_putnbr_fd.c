@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 18:20:51 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/22 18:22:30 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/22 20:31:55 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/22 20:39:01 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	cc;
-
-	cc = c;
-	i = ft_strlen(s);
-	if (cc == 0)
-		return ((char *)&s[i]);
-	while (i >= 0)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		if (s[i] == cc)
-			return ((char *)&s[i]);
-		i--;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	return (0);
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
 
 /* int	main(void)
 {
-	char	s[12] = "Hello World";
+	ft_putnbr_fd(1234, 1);
+	ft_putnbr_fd(-1234, 1);
 
-	printf ("%s\n", ft_strrchr(s, 'o'));
 	return (0);
 } */

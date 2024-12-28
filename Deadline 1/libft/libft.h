@@ -6,12 +6,13 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 01:15:39 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/22 18:18:00 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:42:53 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h> //delete for submit

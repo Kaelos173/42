@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 18:20:51 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/22 18:22:30 by cpineda-         ###   ########.fr       */
+/*   Created: 2024/12/22 19:12:02 by cpineda-          #+#    #+#             */
+/*   Updated: 2024/12/22 20:05:03 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	cc;
+	size_t	i;
 
-	cc = c;
-	i = ft_strlen(s);
-	if (cc == 0)
-		return ((char *)&s[i]);
-	while (i >= 0)
+	i = 0;
+	while (s[i])
 	{
-		if (s[i] == cc)
-			return ((char *)&s[i]);
-		i--;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (0);
 }
 
 /* int	main(void)
 {
-	char	s[12] = "Hello World";
+	ft_putstr_fd("Hello, world!\n", 1);
+	ft_putstr_fd("This is a test of putstr_fd.\n", 1);
 
-	printf ("%s\n", ft_strrchr(s, 'o'));
 	return (0);
 } */
