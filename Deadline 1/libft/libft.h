@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 01:15:39 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/28 12:11:38 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/29 23:40:14 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h> //delete for submit
-# include <string.h> //delete for submit
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

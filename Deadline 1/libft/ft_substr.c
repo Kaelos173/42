@@ -6,7 +6,7 @@
 /*   By: cpineda- <cpineda-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 11:40:53 by cpineda-          #+#    #+#             */
-/*   Updated: 2024/12/28 12:11:34 by cpineda-         ###   ########.fr       */
+/*   Updated: 2024/12/29 23:39:34 by cpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,28 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
+	size_t	s_len;
 
-	i = 0;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		len = 0;
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
-	str = (char *)malloc(sizeof(*s) * (len +1));
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (s_len - start < len)
+		len = s_len - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
+	i = 0;
 	while (i < len)
 	{
-		str[i] = s[i + start];
+		str[i] = s[start + i];
 		i++;
 	}
 	str[i] = '\0';
 	return (str);
 }
+
 /* int	main(void)
 {
     char *s = "Hello, World!";
